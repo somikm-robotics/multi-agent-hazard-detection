@@ -1,0 +1,2 @@
+#!/bin/bash
+exec python3 -m material_handling_agent.nodes.conveyor_classifier_slow_scroll_node "$@"

@@ -1,0 +1,3 @@
+include package.xml
+include resource/material_handling_agent
+
