@@ -7,9 +7,19 @@
 
 ## Overview
 
-A multi-agent robotic framework for autonomous hazard detection and assessment in open-pit ore mining environments. The system integrates three coordinated agents — an aerial drone, a wheeled ground robot, and a human supervisory agent — operating within a ROS2 Iron and Gazebo Fortress simulation.
+A multi-agent robotic framework for autonomous hazard detection and 
+assessment in open-pit ore mining environments. The system integrates 
+three coordinated agents — an aerial drone, a wheeled ground robot, and 
+a human supervisory agent — operating within a ROS2 Iron and Gazebo 
+Fortress simulation.
 
-The system goes beyond simple waypoint navigation to create an intelligent, safety-critical inspection framework capable of detecting, assessing, and responding to multiple hazard types in real time.
+The system goes beyond simple waypoint navigation to create an 
+intelligent, safety-critical inspection framework capable of detecting, 
+assessing, and responding to multiple hazard types in real time. A 
+standalone material handling agent extends the framework to conveyor 
+belt monitoring, classifying operational hazards including blockages, 
+spillage, overloading, and misalignment using a ResNet-18 classifier 
+trained on synthetic ore datasets.
 
 ---
 
@@ -88,7 +98,7 @@ full pipeline detail and performance metrics.
 ---
 
 
-## Conveyor Belt Monitoring
+## Conveyor Belt Monitoring++++++++++++++++++
 
 A standalone material handling agent monitors industrial conveyor belts 
 using a ResNet-18 classifier trained on synthetic ore datasets generated 
