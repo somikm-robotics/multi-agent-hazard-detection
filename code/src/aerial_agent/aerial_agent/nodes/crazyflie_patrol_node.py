@@ -25,7 +25,6 @@ ORBIT_RADIUS       = HAZARD_RADIUS + ORBIT_CLEARANCE   # 1.0 m
 
 
 WAYPOINT_FILE = '/root/ros2_ws/src/aerial_agent/config/patrol_waypoints.yaml'  
-# '/root/ros2_ws/src/aerial_agent/config/patrol_waypoints_capture_pics.yaml'  
 
 WP_NUMBER = 7
 # 
