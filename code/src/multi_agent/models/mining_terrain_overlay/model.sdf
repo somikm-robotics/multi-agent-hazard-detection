@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="mining_terrain_overlay">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://mining_terrain_overlay/meshes/mining_terrain_scaled_reversed_clean.dae</uri>
+            <scale>1 1 1</scale> <!-- Adjust as needed -->
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://mining_terrain_overlay/meshes/mining_terrain_scaled_reversed_clean.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="dust_plume_marker">
+    <static>true</static>
+    <link name="dust_plume_hazard_zone">
+
+      <visual name="dust_plume_visual">
+        <pose>0 0 0.01 0 0 0</pose>
+
+        <!-- Box base (square) with circular alpha PNG projected on top -->
+        <geometry>
+          <box>
+            <size>0.6 1.2 0.005</size>  <!-- Square box, size matches PNG resolution in meters -->
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://hazard_overlays/dust_plume_marker/materials/textures/oval_fade_dust_plume_hazard_texture.png</albedo_map>
+              <roughness>0.4</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+
+        <cast_shadows>false</cast_shadows>
+      </visual>
+
+    </link>
+    <plugin filename="libdust_plume_sensor.so"
+        name="dust_plume_sensor">
+        <target_model>agilex_diff_drive</target_model>
+        <radius>5</radius>
+        <height>3</height>
+    <!-- radius, height, etc. -->
+  </plugin>
+
+  </model>
+</sdf>

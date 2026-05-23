@@ -1,0 +1,175 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="mining_world">
+
+    <!-- Physics engine system plugin -->
+    <plugin
+      filename="libignition-gazebo6-physics-system.so"
+      name="ignition::gazebo::systems::Physics"/>
+
+    <!-- Scene broadcaster (needed for GUI to render models) -->
+    <plugin
+      filename="libignition-gazebo6-scene-broadcaster-system.so"
+      name="ignition::gazebo::systems::SceneBroadcaster"/>
+
+    <!-- User commands (allows GUI drag, delete, spawn, etc.) -->
+    <plugin
+      filename="libignition-gazebo6-user-commands-system.so"
+      name="ignition::gazebo::systems::UserCommands"/>
+
+    <!-- Sensor system plugin (required for cameras and other sensors) -->
+    <plugin
+      filename="libignition-gazebo6-sensors-system.so"
+      name="ignition::gazebo::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <!-- Add this: IMU system plugin -->
+    <plugin
+      filename="libignition-gazebo6-imu-system.so"
+      name="ignition::gazebo::systems::Imu">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <!-- NavSat system plugin (for <sensor type='navsat'>) -->
+    <plugin filename="libignition-gazebo6-navsat-system.so" name="ignition::gazebo::systems::NavSat">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>38.150000</latitude_deg>
+      <longitude_deg>-122.460000</longitude_deg>
+      <elevation>0.0</elevation>        <!-- metres -->
+      <heading_deg>0.0</heading_deg>    <!-- optional, yaw of +X axis -->
+    </spherical_coordinates>
+
+
+    
+
+    <!-- Lighting -->
+    <!-- <include>
+      <uri>model://sun</uri>
+    </include> -->
+
+
+    <!--  inline sun light -->
+    <model name="sun">
+      <static>true</static>
+      <link name="link">
+        <light name="sun_light" type="directional">
+          <cast_shadows>true</cast_shadows>
+          <direction>-0.5 0.5 -1</direction>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </light>
+      </link>
+    </model>
+
+    <include>
+      <uri>model://mining_terrain_overlay</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+
+      <!-- Robot Spawns -->
+    <include>
+      <uri>model://crazyflie</uri>
+      <name>crazyflie</name>
+      <pose>-9.0 -8 2 0 0 0</pose>
+    </include>
+
+    <!-- obstacles  -->
+    <include>
+      <uri>model://mossy_bark</uri>
+      <pose>8 -7.5 0.05 0 0 0</pose>  
+    </include>
+
+
+    <include>
+      <uri>model://medium_rock_fall</uri>
+      <pose>1.5 8.3 0.05 0 0 0</pose>  
+    </include>
+
+    <include>
+      <uri>model://small_rock_fall</uri>
+      <pose>6.5 7.2 0.05 0 0 0</pose>  
+    </include>
+
+    <include>
+      <uri>model://wood_case</uri>
+      <pose>4.5 9.0 0.05 0 0 0</pose>  
+    </include>
+
+    <include>
+      <uri>model://office_building</uri>
+      <pose>-9 9.0 0.05 0 0 0</pose>  
+    </include>
+
+    <include>
+      <name>front_wall</name>
+      <uri>model://wall</uri>
+      <pose>10 0 1 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>back_wall</name>
+      <uri>model://wall</uri>
+      <pose>-10 0 1 0 0 0</pose>
+    </include>
+
+    <!-- 90° rotation in yaw -->
+    <include>
+      <name>left_wall</name>
+      <uri>model://wall</uri>
+      <pose>0 10 1 0 0 1.5708</pose> 
+    </include>
+
+    <include>
+      <name>right_wall</name>
+      <uri>model://wall</uri>
+      <pose>0 -10 1 0 0 1.5708</pose> 
+    </include>
+
+  
+  <!-- Invisible flat navigation overlay to improve Nav2 performance -->
+  <model name="nav_overlay">
+    <static>true</static>
+    <!-- Slightly above terrain so wheels don't clip -->
+    <pose>0 0 0.05 0 0 0</pose>
+    <link name="overlay_link">
+      <collision name="overlay_collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>20 20</size>  <!-- covers from -10,-10 to 10,10 -->
+          </plane>
+        </geometry>
+      </collision>
+      <!-- <visual name="overlay_visual">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>20 20</size>
+          </plane>
+        </geometry>
+        <material>
+          <ambient>1 1 1 0</ambient>
+          <diffuse>1 1 1 0</diffuse>
+          <specular>1 1 1 0</specular>
+          <emissive>1 1 1 0</emissive>
+        </material>
+        <transparency>0.8</transparency> 
+      </visual> -->
+    </link>
+  </model>
+
+
+  
+
+    
+
+
+
+  </world>
+</sdf>

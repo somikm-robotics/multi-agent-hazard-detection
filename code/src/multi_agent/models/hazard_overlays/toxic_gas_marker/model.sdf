@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="toxic_gas_marker">
+    <static>true</static>
+    
+      <plugin
+        filename="libignition-gazebo6-pose-publisher-system.so"
+        name="ignition::gazebo::systems::PosePublisher">
+        <publish_link_pose>true</publish_link_pose>
+        <publish_sensor_pose>true</publish_sensor_pose>
+      </plugin>
+
+      <!--  gas emitter plugin -->
+      <plugin name="gas_emitter" filename="libgas_emitter.so">
+        <!-- Raw‑value emitter -->
+        <topic>/hazards/toxic_gas/raw</topic>
+        <!-- publish rate, Hz -->
+        <rate>10</rate>
+        <!-- ±fractional noise added to every species -->
+        <noise>0.05</noise>
+      </plugin>
+
+    <link name="toxic_gas_hazard_zone">
+
+      <visual name="toxic_gas_visual">
+        <pose>0 0 0.01 0 0 0</pose>
+
+        <geometry>
+          <box>
+            <size>0.7 1.05 0.005</size>  <!-- Oval shape (X=width, Y=height) -->
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://hazard_overlays/toxic_gas_marker/materials/textures/toxic_gas_marker_elliptical_fade.png</albedo_map>
+              <roughness>0.4</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      
+
+
+    </link>
+  </model>
+</sdf>

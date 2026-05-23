@@ -1,0 +1,32 @@
+<?xml version="2.0"?>
+<package format="2">
+  <name>multi_agent</name>
+  <version>0.0.0</version>
+  <description>Unified launch package for multi-agent coordination.</description>
+
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>MIT</license>
+
+  <!-- Required for ament_cmake builds -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Run dependencies -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+
+  <!-- ros2_control runtime deps we really use -->
+  <exec_depend>diff_drive_controller</exec_depend>
+  <exec_depend>joint_state_broadcaster</exec_depend>
+  <exec_depend>gz_ros2_control</exec_depend>
+
+  <!-- Optional but recommended, because they pull in shared msg / cli tools -->
+  <exec_depend>control_msgs</exec_depend>
+  <exec_depend>hardware_interface</exec_depend>
+  <exec_depend>ros2controlcli</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

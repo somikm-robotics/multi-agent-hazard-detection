@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="asbestos_marker">
+    <static>true</static>
+    <link name="asbestos_hazard_zone">
+
+      <pose>0 0 0 0 0 0</pose> <!-- aligned to world grid -->
+
+      <!-- Circular faded hazard patch -->
+      <visual name="asbestos_texture">
+        <pose>0 0 0.01 0 0 0</pose> <!-- just above terrain to avoid Z-fighting -->
+        <geometry>
+          <box>
+            <size>1.2 1.2 0.005</size>  <!-- square flat patch -->
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://hazard_overlays/asbestos_marker/materials/textures/asbestos_marker_circular_fade.png</albedo_map>
+              <roughness>0.6</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <collision name="patch_collision">
+        <pose>0 0 0.01 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 1.2 0.005</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+  </model>
+</sdf>
