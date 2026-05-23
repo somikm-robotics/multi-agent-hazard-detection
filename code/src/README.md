@@ -45,6 +45,10 @@ This system demonstrates a **multi-agent robotic framework** capable of detectin
    - [Main Multi-Agent System + Supervisory Agent](#a-main-multi-agent-system--supervisory-agent)  
    - [Conveyor Belt Classifier Scroll (Independent Demo)](#b-conveyor-belt-classifier-scroll-independent-demo)  
 6. [Exiting](#6-exiting)  
+7. [AI Models and Datasets](#7-ai-models-and-datasets)
+8. [Robot Models](#8-robot-models)
+9. [Troubleshooting Notes](#9-troubleshooting-notes)
+10. [Incident Times](#10-incident-times)
 
 ---
 
@@ -195,8 +199,24 @@ into the corresponding `ai_models/` folder within each agent package.
 Raw training datasets are not included in this repository.
 Available on request
 
+---
 
-## 8. Troubleshooting Notes
+## 8. Robot Models
+
+Robot models were adapted from manufacturer-provided xacro files:
+
+| Robot | Source Package |
+|-------|---------------|
+| Crazyflie | [crazyflie_ros2](https://github.com/IMRCLab/crazyswarm2) |
+| Agilex Sawyer | [agilex_ros2](https://github.com/agilexrobotics) |
+
+URDF files are located in their respective agent packages:
+- Crazyflie → `aerial_agent/models/crazyflie/`
+- Agilex → `ground_agent/urdfs/`
+
+---
+
+## 9. Troubleshooting Notes
 All required ROS 2 and Gazebo packages are installed automatically in the Docker image.  
 However, in case of version conflicts or missing dependencies, you may manually clone the upstream packages into `ros2_ws/src` and rebuild:
 
@@ -214,7 +234,7 @@ git clone https://github.com/ros-planning/navigation2.git -b iron
 git clone https://github.com/gazebosim/ros_gz.git -b iron
 ```
 
-## 9. Incident Times
+## 10. Incident Times
 
 - **Asbestos mission** — key events at approximately: 2, 4, 10 minutes, 
   and the final 1–2 minutes
