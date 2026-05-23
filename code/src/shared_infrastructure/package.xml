@@ -3,7 +3,7 @@
   <name>shared_infrastructure</name>
   <version>0.0.0</version>
   <description>Shared Python utilities and hazard types</description>
-  <maintainer email="you@example.com">Your Name</maintainer>
+  <maintainer email="somi.murthyk@gmail.com">Somi Murthy</maintainer>
   <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

@@ -4,7 +4,7 @@
   <version>0.0.0</version>
   <description>Unified launch package for multi-agent coordination.</description>
 
-  <maintainer email="you@example.com">Your Name</maintainer>
+  <maintainer email="somi.murthyk@gmail.com">Somi Murthy</maintainer>
   <license>MIT</license>
 
   <!-- Required for ament_cmake builds -->

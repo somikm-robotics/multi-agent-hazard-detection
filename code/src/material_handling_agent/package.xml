@@ -4,7 +4,7 @@
   <version>0.0.0</version>
   <description>ROS2 Python package for the material handling agent in multi-agent mining system</description>
 
-  <maintainer email="ucabskr@ucl.ac.uk">Somi Murthy</maintainer>
+  <maintainer email="somi.murthyk@gmail.com">Somi Murthy</maintainer>
   <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
