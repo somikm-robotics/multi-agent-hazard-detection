@@ -1,0 +1,17 @@
+# ------------ request -------------
+float64 x            # drone world-x at time of call
+float64 y            # drone world-y
+float64 z            # drone altitude AGL – lets detector convert pixels→metres
+bool    force_publish  # true ⇒ publish even if bbox isn’t centred
+---
+# ------------ response ------------
+bool   detected          # true  → hazard found & message published
+bool   centred           # true  → bbox already centred → ready to publish
+bool has_published       # true / false
+
+float64 du_px         # box-centre offset from image-centre in *pixels*
+float64 dv_px
+float64 fx            # focal lengths the detector used
+float64 fy
+
+string hazard_type       # "dust_plume" / "fibrous_hazard" / ""

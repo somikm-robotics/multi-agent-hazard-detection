@@ -1,0 +1,6 @@
+geometry_msgs/PoseStamped[] waypoints
+string hazard_type
+
+---
+bool success
+string message

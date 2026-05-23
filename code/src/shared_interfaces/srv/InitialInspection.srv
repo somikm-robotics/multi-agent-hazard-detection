@@ -1,0 +1,6 @@
+#Request
+string hazard_type
+---
+#Response
+bool success
+string message

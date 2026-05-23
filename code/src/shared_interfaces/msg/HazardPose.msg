@@ -1,0 +1,4 @@
+geometry_msgs/Pose pose
+string hazard_type
+float64 estimated_hazard_diameter
+geometry_msgs/Point hazard_center_point

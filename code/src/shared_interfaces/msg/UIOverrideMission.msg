@@ -1,0 +1,2 @@
+string command
+bool is_initial_inspection

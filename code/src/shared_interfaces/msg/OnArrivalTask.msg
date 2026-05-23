@@ -1,0 +1,4 @@
+string hazard_type
+string task_type
+float64 estimated_hazard_diameter
+geometry_msgs/Point hazard_center_point
