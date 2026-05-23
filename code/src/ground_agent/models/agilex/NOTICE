@@ -1,0 +1,8 @@
+Agilex Scout robot meshes sourced from:
+https://github.com/agilexrobotics/scout_ros2
+(scout_description package)
+
+Licensed under Apache License 2.0
+http://www.apache.org/licenses/LICENSE-2.0
+
+Files have been modified from the original for use in this project.

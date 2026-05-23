@@ -1,5 +1,5 @@
 <sdf version='1.7'>
-  <model name='agilex_sawyer'>
+  <model name='agilex'>
     <link name='base_link'>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
@@ -34,7 +34,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://agilex_sawyer/meshes/agilex/base_link.dae</uri>
+            <uri>model://agilex/meshes/base_link.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -85,7 +85,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://agilex_sawyer/meshes/agilex/wheel_type2.dae</uri>
+            <uri>model://agilex/meshes/wheel_type2.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -136,7 +136,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://agilex_sawyer/meshes/agilex/wheel_type1.dae</uri>
+            <uri>model://agilex/meshes/wheel_type1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -187,7 +187,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://agilex_sawyer/meshes/agilex/wheel_type1.dae</uri>
+            <uri>model://agilex/meshes/wheel_type1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -238,7 +238,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://agilex_sawyer/meshes/agilex/wheel_type2.dae</uri>
+            <uri>model://agilex/meshes/wheel_type2.dae</uri>
           </mesh>
         </geometry>
       </visual>

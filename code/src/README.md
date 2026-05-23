@@ -203,16 +203,14 @@ Available on request
 
 ## 8. Robot Models
 
-Robot models were adapted from manufacturer-provided xacro files:
+| Robot | Source | License |
+|-------|--------|---------|
+| Crazyflie | [crazyflie-simulation](https://github.com/bitcraze/crazyflie-simulation) (Bitcraze AB) | MIT |
+| Agilex Scout | [scout_ros2](https://github.com/agilexrobotics/scout_ros2) (AgileX Robotics) | Apache 2.0 |
 
-| Robot | Source Package |
-|-------|---------------|
-| Crazyflie | [crazyflie_ros2](https://github.com/IMRCLab/crazyswarm2) |
-| Agilex Sawyer | [agilex_ros2](https://github.com/agilexrobotics) |
-
-URDF files are located in their respective agent packages:
-- Crazyflie → `aerial_agent/models/crazyflie/`
-- Agilex → `ground_agent/urdfs/`
+- Crazyflie model and meshes → `aerial_agent/models/crazyflie/` — unmodified
+- Agilex meshes → `ground_agent/models/agilex/meshes/` — unmodified, see `NOTICE` and `LICENSE_AGILEX` for attribution
+- Agilex URDF and model.sdf → `ground_agent/urdfs/agilex.urdf` — modified from original for this project
 
 ---
 

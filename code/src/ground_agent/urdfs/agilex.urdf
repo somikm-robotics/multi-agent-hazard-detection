@@ -46,7 +46,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="model://agilex_sawyer/meshes/agilex/base_link.dae"/>
+        <mesh filename="model://agilex/meshes/base_link.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -90,7 +90,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <!-- <cylinder length="${wheel_length}" radius="${wheel_radius}" /> -->
-        <mesh filename="model://agilex_sawyer/meshes/agilex/wheel_type1.dae"/>
+        <mesh filename="model://agilex/meshes/wheel_type1.dae"/>
       </geometry>
       <!-- <material>
                     <color rgba="0.2 0.2 0.2 1.0" />
@@ -120,7 +120,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="model://agilex_sawyer/meshes/agilex/wheel_type2.dae"/>
+        <mesh filename="model://agilex/meshes/wheel_type2.dae"/>
         <!-- <cylinder length="${wheel_length}" radius="${wheel_radius}" /> -->
       </geometry>
       <!-- <material>
@@ -152,7 +152,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <!-- <cylinder length="${wheel_length}" radius="${wheel_radius}" /> -->
-        <mesh filename="model://agilex_sawyer/meshes/agilex/wheel_type1.dae"/>
+        <mesh filename="model://agilex/meshes/wheel_type1.dae"/>
       </geometry>
       <!-- <material>
                     <color rgba="0.2 0.2 0.2 1.0" />
@@ -182,7 +182,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="model://agilex_sawyer/meshes/agilex/wheel_type2.dae"/>
+        <mesh filename="model://agilex/meshes/wheel_type2.dae"/>
         <!-- <cylinder length="${wheel_length}" radius="${wheel_radius}" /> -->
       </geometry>
       <!-- <material>
