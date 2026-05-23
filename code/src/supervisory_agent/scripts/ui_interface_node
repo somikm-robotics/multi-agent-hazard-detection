@@ -1,0 +1,2 @@
+#!/bin/bash
+exec python3 -m supervisory_agent.nodes.ui_interface_node "$@"
