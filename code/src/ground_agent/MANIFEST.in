@@ -1,0 +1,3 @@
+include package.xml
+include resource/ground_agent
+

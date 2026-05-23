@@ -1,0 +1,2 @@
+#!/bin/bash
+exec python3 -m ground_agent.nodes.on_arrival_task_node "$@"

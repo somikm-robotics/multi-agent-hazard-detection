@@ -1,0 +1,2 @@
+#!/bin/bash
+exec python3 -m ground_agent.nodes.twist_relay_node "$@"

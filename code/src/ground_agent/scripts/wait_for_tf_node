@@ -1,0 +1,2 @@
+#!/bin/bash
+exec python3 -m ground_agent.nodes.wait_for_tf_node "$@"
