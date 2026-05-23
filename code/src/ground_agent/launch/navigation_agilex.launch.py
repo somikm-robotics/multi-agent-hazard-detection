@@ -81,6 +81,17 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time}]
     )
 
+    # static_map_odom_tf = Node(
+    #     package    = 'tf2_ros',
+    #     executable = 'static_transform_publisher',
+    #     name       = 'static_tf_map_odom',
+    #     #            x      y     z   qx qy qz qw  parent child
+    #     arguments  = ['-9.0', '2.0', '0',  '0', '0', '0', '1', 'map', 'odom'],
+    #     parameters = [{'use_sim_time': True}],
+    #     output     = 'screen'
+    # )
+
+    
     pkg_nav2_bringup = get_package_share_directory('nav2_bringup')
 
 
@@ -137,7 +148,19 @@ def generate_launch_description():
             '--log-level nav2_costmap_2d:=debug"'),
         ]
     )
-  
+
+    
+
+    # odom_relay_node = Node(
+    #     package='topic_tools',
+    #     executable='relay',
+    #     name='odom_relay',
+    #     arguments=['/diff_drive_base_controller/odom', '/odom'],
+    #     output='screen'
+    # )
+
+
+
     return LaunchDescription(
         [
             declare_sim_arg,
@@ -152,7 +175,8 @@ def generate_launch_description():
             
             map_server_node,
             map_server_lifecycle_node,
-               twist_relay_node,
+            # odom_relay_node,
+            twist_relay_node,
             nav2_bringup_launch
         ]
     )
