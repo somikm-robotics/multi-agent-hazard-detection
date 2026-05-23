@@ -148,6 +148,7 @@ for full detail.
 | Data / Annotation | Roboflow, synthetic dataset generation |
 | Visualisation | RViz, Tkinter, Matplotlib, OpenCV |
 | Platforms | Crazyflie (aerial), Agilex (ground) |
+| Containerisation | Docker (Ubuntu 22.04, ROS2 Iron, Gazebo Fortress) |
 
 ---
 
