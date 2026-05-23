@@ -1,0 +1,2 @@
+include package.xml
+include resource/shared_infrastructure

@@ -1,0 +1,2 @@
+#!/bin/bash
+exec python3 -m shared_infrastructure.nodes.shutdown_trigger_node "$@"

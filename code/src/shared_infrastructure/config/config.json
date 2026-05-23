@@ -1,0 +1,27 @@
+{
+    "max_ui_history": 10,
+    "service_timeout": 10.0,
+    "current_hazard_target": "Dust Plume",
+    "agilex_base_pose": [
+        -9.0,
+        2.0,
+        0.5,
+        0.0
+    ],
+    "navigation_override_timeout_in_minutes": 1.0,
+    "simulation": true,
+    "stopping_distance_from_hazard": 0.5,
+    "current_ore_spawn_mode": "Normal",
+    "agilex_camera_fov_deg": 60,
+    "agilex_camera_offset": 0.32,
+    "agile_length_m": 1.00,
+    "_comment_agile_length_m": "full bumper-to-bumper length",
+    "agile_width_m": 0.55,
+    "_comment_agile_width_m": "full width (outside wheels or fenders)",
+    "fibrous_hazard_safety_margin": 0.30,
+    "dust_plume_safety_margin": 0.40,
+    "fibrous_hazard_safety_radius": 0.70,
+    "dust_plume_safety_radius": 1.10,
+    "additional_safety_margin": 0.08,
+    "is_orbit_clockwise": "True"
+}
