@@ -82,12 +82,6 @@ class HazardDetectionNode(Node):
         self.latest_header  = None      # <-- cache the ROS Header here
         self.create_subscription(Image, RGB_CAMERA_TOPIC, self.image_cb, 10)
 
-        # self.latest_depth     = None
-        # self.latest_depth_hdr = None
-
-        # self.create_subscription(
-        #         Image, DEPTH_CAMERA_TOPIC, self._depth_cb, 10)
-
         # pub / subs
         self.det_pub = self.create_publisher(HazardPose, 'internal_hazard', 10)
         # self.publish_timer = self.create_timer(1.0, self.publish_internal)
@@ -110,8 +104,6 @@ class HazardDetectionNode(Node):
         self.det_model = YOLO(det_model_path)
 
         self.get_logger().info(f"DET classes: {self.det_model.names}")
-
-        # self.get_logger().info(f"DET classes filter: {self.det_model.classes}")  # should be None
 
          # thresholds
         self.cls_thr        = 0.50
@@ -219,9 +211,7 @@ class HazardDetectionNode(Node):
             x_d, y_d, z_agl = req.x, req.y, req.z    # drone XY in map + altitude above ground
             # camera intrinsics (cached once from /camera_info)
             fx, fy = self.fx, self.fy                 # focal lengths in pixels
-            # self.get_logger().info("Finding....")
             xmin, ymin, xmax, ymax = best.xyxy[0].tolist()       # tensor → list
-            # self.get_logger().info(f"Found: {xmin}, {ymin} - {xmax}, {ymax}")
             #  project the box centre to world and publish the pose
             
             # 1. pixel offsets (signed) 
@@ -255,18 +245,10 @@ class HazardDetectionNode(Node):
             center_pt.x = round(haz_x, 1)
             center_pt.y = round(haz_y, 1)
             center_pt.z = 0.0                    # ground-plane
-
-        # res.fx = self.fx
-        # res.fy = self.fy
-
-        # res.detected = True
-        # res.centred  = (abs(res.du_px) < BBOX_CENTER_PX and
-        #             abs(res.dv_px) < BBOX_CENTER_PX)
-        
         
             res.hazard_type = class_name
             self.get_logger().info(f"Requesting bbox diameter: ({xmin}, {xmax}) z: {req.z}  {self.fx}")
-            # if (res.centred or req.force_publish) and not self.already_published:
+
             diameter_m = get_bbox_diameter_m(xmin, xmax, req.z, self.fx)
             estimated_diameter = round(diameter_m, 1)
             self.get_logger().info(f"Class name: {class_name}")

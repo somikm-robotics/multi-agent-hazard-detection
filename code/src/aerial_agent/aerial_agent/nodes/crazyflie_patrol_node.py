@@ -26,6 +26,7 @@ ORBIT_RADIUS       = HAZARD_RADIUS + ORBIT_CLEARANCE   # 1.0 m
 
 WAYPOINT_FILE = '/root/ros2_ws/src/aerial_agent/config/patrol_waypoints.yaml'  
 
+
 WP_NUMBER = 7
 # 
 CRUISE_ALT = 4.0 # [m]
@@ -147,9 +148,6 @@ LOW_DESC_Z_GAIN   = 0.12      # P‐gain for gentle descent
 LOW_DESC_VEL_MAX  = 0.20      # m/s hard cap while dropping
 DET_ALT_BAND      = 3.00      # m   fire detector once inside ±3 cm
 
-
-
-# CAPTURE_DIR = "/root/ros2_ws/src/aerial_agent/data/fibrous_detection_captures"
 
 # ---- low-alt capture yaw sweep ----
 YAW_SWEEP_RATE          = 0.12   # rad/s  (gentle)
